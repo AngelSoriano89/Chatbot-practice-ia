@@ -1,0 +1,194 @@
+@import url(_reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background: #106665;
+    background: radial-gradient(circle, rgba(16, 102, 101, 1) 0%, rgba(15, 66, 48, 1) 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    padding: 0 2rem;
+}
+@media screen and (min-width: 1400px) {
+    .container {
+        padding: 0 calc((100vw - 1200px) / 2);
+    }
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    border-bottom: 1px solid #2f2134;
+}
+
+
+.encabezado__logo {
+    width: 90px;
+}
+
+.encabezado__titulo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 10rem - 5rem);
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.chat::-webkit-scrollbar {
+    display: none;
+}
+
+.chat_burbuja {
+    max-width: calc(100% - 3.5rem);
+    width: fit-content;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.375rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+@media screen and (min-width: 1400px){
+    .chat_burbuja {
+        max-width: 60%;
+    }
+}
+
+.chat_burbuja--bot {
+    background-color: #106665;
+    border: 1px solid #452d4c;
+}
+.chat_burbuja--bot::after {
+    content: "";
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    top: 0;
+    right: calc(-2.5rem - 1rem);
+    background-image: url(../img/debot.png);
+    background-size: 5.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.chat_burbuja--usuario {
+    background-color: #106665;
+    border: 1px solid #452d4c;
+    align-self: flex-end;
+}
+.chat_burbuja--usuario::before {
+    content: "";
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: calc(-2.5rem - 1rem);
+    background-image: url(../img/bat.png);
+    background-size: 3.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.entrada {
+    height: 10rem;
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: stretch;
+    align-items: center;
+    border-top: 1px solid #2f2134;
+}
+
+.entrada__container {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5rem;
+    background-color: #106665;
+    border: 1px solid #452d4c;
+    border-radius: 4rem;
+}
+
+.entrada__input {
+    height: 4rem;
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.375rem;
+    color: #FFFFFF;
+    padding-left: 20px;
+}
+
+.entrada__input::placeholder {
+    color: #FFFFFF;
+}
+
+.entrada__enviar-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+    background-color: #ec7353;
+    border: 1px solid #452d4c;
+    border-radius: 50%;
+}
+.entrada__feedback {
+    position: absolute;
+    bottom: 23px;
+    right: calc(2rem + 5.5rem);
+}
+
+@media screen and (min-width: 1400px) {
+    .entrada__feedback {
+        right: calc((100vw - 1200px) / 2 + 5.5rem);
+    }
+}
+
+.icono {
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.icono--enviar-audio {
+    background-image: url(../img/imagen7.png);
+    background-size: 2.5rem;
+}
+
+.icono--mas-opciones {
+    background-image: url(../img/plus.png);
+    background-size: 3.8rem;
+    border: #452d4c 1px solid;
+    border-radius: 50%;
+}
+
+.icono--enviar-mensaje {
+    background-image: url(../img/hand.png);
+    background-size: 3rem;
+    border: #452d4c 1px solid;
+    border-radius: 50%;
+}
+
